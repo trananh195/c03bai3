@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DOM trong HTML</title>
+	<link rel="stylesheet" href="">
+	<style>
+		body{
+			margin: 0;
+			padding: 0;
+			font-size: 20px;
+			text-align: center
+			
+		
+		}
+		.container{
+			width: 900px;
+			margin: 0 auto;
+			background-color: #de7272;
+			min-height: 100vh;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Thông tin Học sinh</h1>
+		<div>
+			Tên học sinh: <input type="text" name="tenhs" id="tenhs" value="Phạm Thị Dung">
+		</div>
+		<div>
+			Cmt học sinh: <input type="text" name="cmt" id="cmt">
+		</div>
+		<!-- Tạo sự kiện ->diễn ra tại javascript khi click chuột vào button: onclick = "<giá trị>", giá trị có thể là 1/ nhiều lệnh hoặc 1 khối code trong hàm tương ứng -->
+		<!-- khi ng dùng click vào nút "Thêm mới học sinh" sẽ gọi tới hàm themmoihs() trong javascript -->
+		<button onclick="themmoihs()">Thêm mới học sinh</button>
+		<h3>Danh sách học sinh</h3>
+		<ul>
+			<li>Phạm Thị A</li>
+			<li>Nguyễn Văn B</li>
+		</ul>
+	</div>
+	<script>
+		function themmoihs(){
+			// với các thẻ chứa content thì innerHTML
+			// với các thẻ form cho người dùng nhập/ chọn giá trị -> value ( ngoại lệ: checkbox, radio -> trạng thái)
+			var tenhsdom = document.getElementById("tenhs");
+			// tenhsdom đối tượng đại diện cho thẻ input có các thuộc tính các attribute trên thẻ và ...
+			/*
+			alert("Xin chào hs mới có thuộc tính name giá trị: "+ tenhsdom.name);
+			alert("Xin chào hs mới tên là: "+ document.getElementById("tenhs").value);
+			*/
+			// getElementsByTagName: lấy ra tất các element có trong html theo thẻ -> mảng nhiều thành phần li đnag tìm
+			let arr_li = document.getElementsByTagName("li")
+			if (arr_li.length > 0){
+				// li cuối cùng
+				let last_li = arr_li[arr_li.length - 1];
+				// insertAdjacentHTML("<vị trí>", "<đoạn code html>"): chèn 1 đoạn html nào đó vào vị trước trước hoặc sau của 1 element
+				let hslihtml = "<li>"+ document.getElementById("tenhs").value + "</li>";
+				// tìm thành phần li cuối cùng và thêm mới vào sau nó 1 li mới
+				last_li.insertAdjacentHTML("afterend", hslihtml);
+				// sau đó làm trắng input tenhs
+				document.getElementById("tenhs").value = "";
+				// sau đó để chuột vào nhấp nháy tại input tenhs
+				document.getElementById("tenhs").focus();
+			}
+		}
+	</script>
+</body>
+</html>

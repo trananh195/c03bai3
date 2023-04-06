@@ -1,0 +1,58 @@
+/* chứa css cho file float_list.html */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	box-sizing: border-box;
+}
+/* css full man hinh */
+.wrapper{
+	width: 100%;
+	min-height: 100vh;
+	background-color: #878080;
+}
+/* css noi dung website*/
+.container{
+	width: 1000px;
+	margin: 0 auto;
+	background-color: white;
+}
+/* hộp chứa hiển thị flex của các item bên trong */
+.flex-container{
+	width: 100%;
+	min-height: 800px;
+	background-color: #92C2F9;
+	/* display: flex:  các item bên trong 
+	sẽ hiển thị theo chiều ngang (mặc định) hoặc dọc của không khả dụng; */
+	display: flex;
+	/* 
+	flex-direction:  chiều hiển thị của các item bên trong (ngang hoặc dọc);
+	row -> theo chiều ngang từ trái -> phải
+	row-reverse-> theo chiều ngang từ phải - trái
+	column -> theo chiều ngang từ trên -> dưới
+	column-reverse -> theo chiều ngang từ dưới -> trên
+	 */
+	flex-direction: column;
+	/*
+	flex-wrap:  khi item vượt quá kích thước của container bị tràn ra ngoài,
+	thì thuộc tính flex-wrap: wrap; chỉ định item con chỉ nằm bên trong không gian cha
+	;
+	  */
+	flex-wrap: wrap;
+	/* flex-flow:  tổng hợp 2 giá trị flex-direction và flex-wrap; */
+	flex-flow: row wrap;
+	/* justify-content:  căn chỉnh các item bên trong theo chiều flex-direction; */
+	justify-content: space-between;
+	/* align-items:  căn chỉnh các item bên trong theo chiều vuông góc 
+			với chiều flex-direction; */
+	align-items: baseline;
+}
+.flex-item{
+	width: 150px;
+	height: 150px;
+	text-align: center;
+	line-height: 150px;
+	background-color: #5C5757;
+	color: white;
+	border: 1px solid #F35858;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Đối tượng/ object trong JS</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- Đối tượng/ object trong js {} là 1 biến đại diện cho nhiều thông tin - nhiều biến con và hành vi - hàm của của 1 thực thể trong bài toán - thế giới thực.
+	Các thành phần của đối tượng đó được được khai báo và định nghĩa trong { }, bởi các cặp <key( tên biến hoặc tên hàm): giá trị (giá trị của biến hoặc 1 hàm cụ thể )> cách nhau bởi dấu , -->
+	<script>
+		
+		let tenhsA = "A";
+		let tuoihsA = 20;
+// tạo đối tượng hs A cụ thể
+/* 
+ - hsA có các thông tin nào?: ten:A, tuoi:20, diachi:Hà Nội, cmt:1212, dtoan:10, dvan:6, danh:8
+ - hsA có những hành vi nào - hàm: xeploai: (1 khối lệnh để tính toán ra xếp loại của hsA)
+*/
+		let hsA = {
+			ten: 'Nguyen van a',
+			tuoi: 20,
+			diachi: "Hà Nội",
+			cmt: "1212",
+			// ttdaydu: this.ten + ": "+ this.tuoi
+		};
+		// bổ sung thêm thuộc tính cho đối tượng 
+		// <đối tượng>.<tên biến> = <giá trị>;
+		hsA.dtoan = 10;
+		hsA.dvan = 6;
+		hsA.danh = 7;
+		// bổ sung thêm hành vi cho đối tượng 
+		// <đối tượng>.<tên hàm> = <hàm tham chiếu tới/ khối lệnh hàm>
+		// <đối tượng>.<tên hàm> = function(<dsthamso>){// khối code}
+		hsA.xeploai = function(){
+			// khối code
+			let dtb = (this.dtoan + this.dvan + this.danh)/3;
+			console.log(dtb);
+			if(dtb < 4){
+				return "Yếu";
+			} else if (dtb < 6.5){
+				return "Trung bình";
+			} else if (dtb < 8.5){
+				return "Khá";
+			} else {
+				return "Giỏi";
+			}
+		};
+		// this: từ khóa đại diện cho đối tượng hiện tại đang được gọi đến tại lệnh đó và this chỉ được dùng trong phạm vi đối tượng, dùng để tham chiếu tới biến hoặc hàm của đối tượng đó.
+		// dùng đối tượng: lấy thông tin của đối tượng đó hiển thị...
+		document.write("<h1>Thông tin của học sinh A</h1>");
+		document.write("<h3> Tên: "+ hsA.ten + "</h3>");
+		document.write("<h3> Tuổi: "+ hsA.tuoi+ "</h3>");
+		document.write("<h3> Địa chỉ: "+ hsA.diachi+ "</h3>");
+		document.write("<h3> Điểm toán: "+ hsA.dtoan+"</h3>");
+		document.write("<h3> Điểm văn: "+ hsA.dvan+"</h3>");
+		document.write("<h3> Điểm anh: "+ hsA.danh+"</h3>");
+		// gọi hàm
+		document.write("<h3> Xếp loại: "+ hsA.xeploai()+"</h3>");
+
+	</script>
+</body>
+</html>

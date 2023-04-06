@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let root1;
+        let root2;
+        let a=prompt("Nhap vao he so a");
+        let b=prompt("Nhap vao he so b ");
+        let c=prompt("Nhap vao he so c");
+        let dis= b*b-4*a*c;
+        if(dis>0){
+            root1 =(-b+Math.sqrt(dis))/(2*a);
+            root2 =(-b-Math.sqrt(dis))/(2*a);
+        
+        }
+        else if(dis==0){
+            root1 = root2 =-b/(2*a);
+            
+        }
+        else{
+             root1 = (-b / (2 * a)).toFixed(2);
+             root2 = (Math.sqrt(-discriminant) / (2 * a)).toFixed(2);
+            
+        }
+        document.write("<h2> "+root1+" and "+root2+" </h2>");
+       
+        
+     
+    </script>
+</body>
+</html>

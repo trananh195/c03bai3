@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            text-align: center;
+        }
+        .container{
+            width: 900px;
+            min-height: 100vh;
+            margin: 0 auto;
+            background-color: aqua;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Thong tin hoc sinh</h1>
+        <div>
+            Ten hoc sinh: <input type="text" name="tenhs" id="tenhs" value="Tran Anh">
+
+        </div>
+        <div>
+            Cmt hoc sinh: <input type="text" name="cmt" id="cmt">
+
+        </div>
+        <button onclick="themmoihs()">Them moi hoc sinh </button>
+        <h3>Danh sach hoc sinh</h3>
+        <ul>
+            <li>Tran van A</li>
+            <li>Tran Van B</li>
+        </ul>
+
+    </div>
+    <script>
+        function themmoihs(){
+            var tenhsdom =document.getElementById(tenhs);
+            let arr_li =document.getElementsByTagName("li");
+            if(arr_li.length>0){
+                let last_li =arr_li[arr_li.length-1];
+                let hslihtml = "<li>"+ document.getElementById("tenhs").value + "</li>";
+                last_li.insertAdjacentHTML("afterend", hslihtml);
+
+            }
+        }
+    </script>
+</body>
+</html>

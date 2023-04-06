@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Danh sách sản phẩm</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css_list.css">
+	<script src="dssanpham.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<div class="header">
+				<!-- xây dựng menu ngang gồm: Home Float Flex Grid sử dụng display flex-->
+				 <ul class="menu"> 
+					<li><i class="fa-solid fa-house"></i><a href="https://www.w3schools.com">Home</a></li> 
+					<li><a href="#">Float</a></li> 
+					<li><a href="flex_list.html">Display Flex</a></li> 
+					<li><i class="fa fa-car"></i><a href="">Display Grid</a></li> 
+				 </ul> 
+			</div>
+			<div class="content">
+				<h3>Example List</h3>
+				<div class="float_container" id="float_container">
+					<!-- <div class="float_item">
+						<img src="<biến chứa tương ứng đường dẫn ảnh sp>" alt="">
+						<h4><Biến chứa tương ứng tên sản phẩm></h4>
+						<p><biến chứa tương ứng mô tả></p>
+			
+					</div> -->
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script>
+		// alert(dssanpham.length);
+		let float_container="";
+		for(let i=0; i<dssanpham.length; i++){
+			float_container+='<div class="float_item">';
+			float_container+='<img src="'+dssanpham[i].anhsp+'" alt="">';
+			float_container+="<h4>"+dssanpham[i].tensp+"</h4>";
+			float_container+="<p>"+dssanpham[i].mota+"</p>";
+			float_container+="</div>"
+
+		}
+		document.getElementById("float_container").innerHTML=float_container;
+	</script>
+</body>
+</html>

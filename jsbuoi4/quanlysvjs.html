@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thêm mới, tìm kiếm sinh viên</title>
+    <link rel="stylesheet" href="quanlysvjs.css">
+    <!--Xây dựng 1 giao diện thêm mới thông tin sinh viên và hiển thị xuống tabble
+    Hỗ trợ chức năng tìm kiếm sinh viên theo tên hoặc mã sv, 
+    Hỗ trợ làm form nhập
+    Chú ý:
+    -tên sv, mã sv là kiểu dữ liệu chuỗi bắt buộc phải nhập thêm mới
+    -Kỳ học và môn học hiển thị dạng list box và theo đúng thông tin của kì học
+    -Điểm thực hành và lý thuyết bắt buộc phải nhập số
+    -->
+</head>
+<body>
+    <div class="container">
+        <div class="formtk">
+            <h2>Thông tin sinh viên</h2>
+            <div class="row">
+                <label for="tensv">Tên SV:</label>
+                <input type="text" name="tensv" id="tensv">
+                <label for="masv">Mã SV:</label>
+                <input type="text" name="masv" id="masv">
+            </div>
+            <div class="row">
+                <label for="tensv">Kỳ học:</label>
+                <select name="kyhoc" id="kyhoc" onchange="laymonhoctheokyhoc()">
+                    <option value="">--Chọn kỳ học</option>
+                    <option value="1">Kỳ 1</option>
+                    <option value="2">Kỳ 2</option>
+                    <option value="3">Kỳ 3</option>
+                    <option value="4">Kỳ 4</option>
+                </select>
+                <label for="tensv">Môn học:</label>
+                <select name="monhoc" id="monhoc">
+                    <!-- <option value="">--Chọn môn học--</option>
+                    <option value="C">--Môn C--</option>
+                    <option value="web">--Môn HTML, CSS, JS--</option>
+                    <option value="C#">--Môn C#--</option>
+                    <option value="ASP">--Môn ASP--</option>
+                    <option value="android">--Môn android--</option> -->
+                </select>             
+            </div>
+            <div class="row">
+                <label for="Điểm thực hành">Điểm thực hành:</label>
+                <input type="number" name="diemthuchanh" id="diemthuchanh">
+                <label for="diemlythuyet">Điểm lý thuyết:</label>                
+                <input type="number" name="diemlythuyet" id="diemlythuyet">
+            </div>
+            <div class="row" id="message" style="color:red;"></div>
+            <div class="row">
+                <button onclick="timkiem()">Tìm kiếm</button>
+                <button onclick="themmoi()">Thêm mới</button>
+                <button onclick="xoaform()">Xóa form</button>
+            </div>
+
+        </div>
+        <div class="data">
+            <h2>Danh sách sinh viên</h2>
+            <table>
+                <tr>
+                    <th>STT</th>
+                    <th>Tên sv</th>
+                    <th>Mã sv</th>
+                    <th>Kỳ học</th>
+                    <th>Môn học</th>
+                    <th>Điểm thự hành</th>
+                    <th>Điểm lý thuyết</th>
+                    <th>Tổng kết</th>
+                </tr>
+            </table>
+    
+        </div>
+        <script>
+            //dữ liệu dùng chung -->toàn cục
+            let dsmonhoc = [];
+            let mon1 ={mamon: 'C', tenmon:"Môn C", kyhoc:"1"}
+            dsmonhoc.push(mon1);
+            dsmonhoc.push({mamon: 'web',tenmon:"Môn Html, js, css", kyhoc: "1"});
+            dsmonhoc.push({mamon: 'java1',tenmon:"Môn Java cơ bản", kyhoc: "2"});
+            dsmonhoc.push({mamon: 'java2',tenmon:"Môn Java nâng cao", kyhoc: "2"});
+            dsmonhoc.push({mamon: 'php',tenmon:"Web động PHP", kyhoc: "2"});
+            dsmonhoc.push({mamon: 'asp',tenmon:"Môn ASP.Net", kyhoc: "3"});
+            dsmonhoc.push({mamon: 'android',tenmon:"Môn mobile", kyhoc: "4"});
+            let dssinhvien = [];
+            
+            function laymonhoctheokyhoc(){
+                //lấy kỳ
+                let kyhoc = document.getElementById("kyhoc").value;
+                //từ mảng dsmonhoc, xet theo kyhoc dedrr lấy ra các môn học đúng -> ds option đúng môn học
+                let dsoption = "";
+                dsmonhoc.forEach(function(monhoc){
+                    if(monhoc.kyhoc == kyhoc){
+                        dsoption += '<option value= "'+monhoc.mamon+'">'+monhoc.tenmon+' </option>';
+                    }
+                });
+                document.getElementById("monhoc").innerHTML = dsoption;
+                
+            }
+            function(themmoi) {
+                //kiểm tra - validate dữ liệu trên form
+                //1.1: không nhập tên sinh viên
+                let tensv = document.getElementById("tensv").value;
+                if(tensv == "" || tensv.trim().length == 0){
+                    alert("Tên sinh viên không được để trống");
+                    document.getElementById("tensv").focus();
+                    return;
+                }
+
+                //1.2: khồn nhập mã sv
+                let masv = document.getElementById("masv").value;
+                if(masv == "" || masv.trim().length == 0){
+                    alert("Mã sinh viên không được để trống");
+                    document.getElementById("masv").style.border ="5px solid red"
+                    document.getElementById("message").innerHTML = "Mã sinh viên không được để trống";
+                    return;
+                }
+
+                //1.3: không chọn kỳ học
+
+                //1.4: không chọn môn học
+
+                //1.5: không nhập điểm thực hành điểm và điểm <0 hoặc điểm >10
+
+                //1.6: không nhận điểm lý thuyết và điểm < 0 hoặc điểm >10    
+
+                //thêm thông tin sinh viên vào mảng nếu hợp lệ
+
+                //hiển thị sinh viên thêm vào bảng
+            }
+            function(timkiem){
+                //lấy thông tin cần tìm kiếm
+
+                //duyệt dssinhvien -> lựa chọn các sinh viên phù họp dk tìm kiếm
+
+                //hiển thị ds sinh viên tìm kiếm phù hợp
+            }
+
+        </script>
+
+      
+    
+</body>
+</html>

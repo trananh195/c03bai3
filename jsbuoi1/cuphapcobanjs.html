@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Cú pháp cơ bản của js</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<ul>
+		<li>Tên học sinh: <b id="tenhs"></b></li>
+		<li>Tuổi học sinh: <i id="tuoihs"></i> </li>
+		<li>Địa chỉ: <span id="diachi"></span></li>
+	</ul>
+	<h2>Dùng write in cả đoạn html</h2>
+	<script>
+		// khai báo biến: var/let/const <tên biến>;
+		/*
+		= phép gán
+		. tham chiếu tới hàm/ biến của đối tượng
+		+ nếu chuỗi là nối chuỗi còn số là phép cộng
+		*/
+		var tenhocsinh;
+		let tuoihocsinh;
+		// phép gán var/let/const <tên biến> = <giá trị>;
+		tenhocsinh = "Phạm Dung";
+		tuoihocsinh = 20;
+		tuoihocsinh = "twenty";
+		let diachi = "Hà Nội";
+		document.write(tenhocsinh);
+		document.getElementById("tenhs").innerHTML = tenhocsinh;
+		document.getElementById("tuoihs").innerHTML = tuoihocsinh;
+		document.getElementById("diachi").innerHTML = diachi;
+
+		let thongtinhs = "<ul>";
+		thongtinhs = thongtinhs + "<li>Tên học sinh: <b>"+tenhocsinh +"</b></li>";
+		thongtinhs += "<li>Tuổi học sinh: <i>"+tuoihocsinh + "</i> </li>";
+		thongtinhs += "<li>Địa chỉ: <span>"+diachi+"</span></li>";
+		thongtinhs += "</ul>";
+		document.write(thongtinhs);
+
+		/*Phép so sánh bằng:
+			A == B: so sánh giá trị của A và B bằng nhau hay không?
+			A === B: so sánh giá trị và kiểu của A và B có bằng nhau hay không?
+		*/
+		if (1 == "1"){
+			document.write("<h2> 1 == '1'</h2>");
+		} else {
+			document.write("<h2> 1 != '1'</h2>");
+		}
+		// (biểu thức 1 - true/false)?(biểu thức 2 khi bt1 == true):(biểu thức 3 khi bt1 == false)
+		document.write((1 === "1")?("<h2> 1 === '1'</h2>"):("<h2> 1 !== '1'</h2>") );
+		
+		var num1;// biến num1 chưa được đn giá trị (undefined)
+		if(num1 != undefined){
+			console.log("Num1: " + num1.toString());
+		}
+		
+		
+
+	</script>
+</body>
+</html>

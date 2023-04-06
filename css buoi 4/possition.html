@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="urf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Position</title>
+        <link rel="stylesheet" href="">
+        <style>
+            .container{
+                width: 500px;
+                height: 300px;
+                background-color: gray;
+                border: 1px solid black;
+                margin-top: 100px;
+                position: relative;
+            }
+            .item{
+                width: 200px;
+                height: 150px;
+                background-color: yellow;
+                border: 1px solid black;
+                /* position: absolute: item tìm ông cha gần nhất có poisition khác static để hiển thị theo
+                các giá trị top, bot, left, right */
+                /* top item cách top của ông cha gần nhất có position khác static là 200px  */
+                position: absolute;
+                left: 200px;
+                top: 200px; 
+            }
+            .item2{
+                width: 200px;
+                height: 150px;
+                background-color: green;
+                border: 1px solid black;
+                /*position khác static, thì element được xác định vị trí cùng 4 giá trị:top(cách top cha)
+                bottom(cách bottom cha), left(cách left cha), right(cách right cha) 1gias trị nào đó so với elemnt
+                */
+                left: 0px;
+                bottom: 0px;
+
+
+                position: absolute; 
+
+            }
+        </style>
+
+
+
+    </head>
+    <body>
+        <div class="container">
+            <div class="item2"></div>
+            <div class="item"> </div>
+        </div>
+        
+    </body>
+</html>

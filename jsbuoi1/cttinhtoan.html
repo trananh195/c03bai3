@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Prompt trong js: hiển thị box cho người dùng nhập lấy giá trị trong js</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<script>
+		// prompt: hiển thị 1 box cho người dùng nhập trị tại client và trả về giá trị nhập
+		let num1 = prompt("Nhập số thứ nhất");
+		let num2 = prompt("Nhập số thứ hai");
+		let sum;
+		// = num1 + num2;
+		// isNaN: check 1 biến không thể là hoặc chuyển đổi về 1 số được: true, false: là number
+		if (!isNaN(num1))
+			num1 = Number(num1); 
+		// Number() -> chuyển 1 chuỗi về 1 số nếu được
+		if (!isNaN(num2))
+			num2 = Number(num2); 
+		sum = num1 + num2;
+		document.write("<h2>"+ num1 + " + "+ num2 + " = "+ sum + "</h2>");
+	</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    
+    /*hkai báo nền là 1 item là 1 ảnh backgruond-image */
+    background-image: url(../cssbuoi3/natural/10.jpg);
+    /*background-repeat: ảnh nền có được lập hay không lập/ lập theo chiều nào*/
+    background-repeat: no-repeat ;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+.container>h2{
+    font-size: 40px;
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+}
+.container>p{
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: justify;
+    padding: 40px;
+    
+
+}
+.container>button{
+    background-color: red;
+    text-transform:uppercase ;
+    padding: 10px 20px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+
+}
+.container>button:hover{
+    background-color: yellow;
+    color: black;
+}
+.container>div.note{
+    font-size: 15px;
+    font-style: italic;
+    border: 1px solid #f1f1f1;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+}

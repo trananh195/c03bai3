@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Các cách hiển thị nội dung từ js</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<h2 id="h2_1">Thẻ h2 1 đầu tiên</h2>
+	<h2>Thẻ h2 thứ 2</h2>
+	<h2>Thẻ h2 thứ 3</h2>
+	<pre>
+	<script>
+		// IN TEXT (chuỗi, số, bool, chuỗi html) RA HTML DE HIEN THI
+		document.write("<h1>Xin chào javascript</h1>");
+		document.write("<h2>javascript buổi 1</h2>");
+		// in ra console của trình duyệt
+		console.log("Hiển thị log javascript trong console browser");
+		// hiển thị dạng cảnh báo trên trình duyệt
+		// alert("Xin chào alert"+" javascript");
+		// hiển thị có lựa chọn theo element/ nhóm element html -> xác định 1/nhiều element bị tác động bởi các hàm document.getElement...
+		//document.getElementById("h2_1") => trả 1 đối tượng đại diện cho element html nào đó có giá id='h2_1'
+		// lấy content được bao trong 1 element nào đó: innerHTML
+		console.log("H2_1: "+ document.getElementById("h2_1").innerHTML);
+		// thay đổi/ gán content được bao trong 1 element nào đó: ...innerHTML = 
+		document.getElementById("h2_1").innerHTML = "<i>document.getElementById dùng để lấy 1 element dựa vào id của thẻ</i>";
+	</script>
+	</pre>
+</body>
+</html>

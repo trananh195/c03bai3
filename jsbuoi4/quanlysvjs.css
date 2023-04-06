@@ -1,0 +1,38 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 1000px;
+    min-height: 100vh;
+    margin: 0 auto;
+  
+}
+
+
+.row{
+    height: 40px;
+    line-height: 40px;
+    /* display: flex;
+    flex-direction: row;
+    flex-flow:wrap ; */
+}
+label{
+    min-width: 100px;
+}
+input.select{
+    min-width: 200px;
+    height: 30px;
+}
+button{
+    width: 60px;
+    height: 30px;
+    border:  1px solid #f1f1f1;
+    border-radius: 5px;
+}
+table,tr,th,td{
+    border: 1px solid #f1f1f1;
+    border: ;
+
+

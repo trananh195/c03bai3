@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		body{
+			margin:  0;
+			padding: 0;
+		}
+		.container{
+			margin: 0 auto;
+			width: 600px;
+			min-height: 100vh;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h2>Tìm kiếm sinh viên</h2>
+		<div class="search">
+			Tên sinh viên:
+			<input type="text" name="tensv" id="tensv">
+			<button onclick="timtensv()">Tìm kiếm</button>
+		</div>
+		<h3>Kết quả tìm kiếm</h3>
+		<div id="result">
+			
+		</div>
+	</div>
+	<script>
+		let dstensv = ["Phạm Thị Dung", "Nguyễn Văn Hậu", "Hoàng Thị Lan"];
+		function timkiem(event){
+			//khi người dùng nhấn phím enter thì tìm kiếm, còn lại thì không thụưc hiện gì cho chủ thể
+			console.log('key: '+ event.key);
+			if(event.key== 'Enter'){
+				timtensv();
+			}
+					}
+
+		function timtensv(){
+			let tensv = document.getElementById("tensv");
+			let dstentimthay = "";
+			dstensv.forEach(function(item){
+				if(item.indexOf(tensv) >= 0){
+					// tim thay
+					dstentimthay += item + ",";
+				}
+			});
+			if (dstentimthay.length > 0){
+				// tim thay
+				document.getElementById("result").innerHTML = dstentimthay; 
+			} else {
+				// không tìm thấy
+				document.getElementById("result").innerHTML = "<i>Không tìm thấy</i>";
+			}
+		}
+	</script>
+</body>
+</html>

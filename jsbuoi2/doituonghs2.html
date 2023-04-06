@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let hsA ={
+            ten: "Tran Anh",
+            tuoi: 20,
+            diachi: "Ha noi",
+            cmt: 1212,
+        };
+        hsA.dtoan =9;
+        hsA.dvan =8;
+        hsA.danh =10;
+        hsA.xeploai =function(){
+            let dtb =(this.dtoan +this.dvan+ this.danh)/3;
+            console.log(dtb);
+            if(dtb<4){
+                return "Yeu";
+            }else if(dtb<6.5){
+                return "Trung binh";
+            }else if(dtb<8.5){
+                return "Kha";
+            }
+            else{
+                return "Gioi";
+            }
+        }
+        document.write("<h1> Thong tin hoc sinh </h3>");
+        document.write("<h3> Ten:"+hsA.ten+"</h3>");
+        document.write("<h3> Tuoi:"+hsA.tuoi+"</h3>"); 
+        document.write("<h3> Cmt:"+hsA.cmt+"</h3>"); 
+        document.write("<h3> Diem toan:"+hsA.dtoan+"</h3>"); 
+        document.write("<h3> Diem van:"+hsA.dvan+"</h3>"); 
+        document.write("<h3> Diem anh:"+hsA.danh+"</h3>"); 
+        document.write("<h3> xep loai:"+hsA.xeploai()+"</h3>");     
+
+    </script>
+</body>
+</html>

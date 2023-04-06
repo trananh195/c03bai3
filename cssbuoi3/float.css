@@ -1,0 +1,83 @@
+/* chứa css cho file float_list.html */
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
+	box-sizing: border-box;
+}
+/* css full man hinh */
+.wrapper{
+	width: 100%;
+	min-height: 100vh;
+	background-color: #878080;
+}
+/* css noi dung website*/
+.container{
+	width: 1000px;
+	margin: 0 auto;
+	background-color: white;
+}
+/* css cho menu ngang cua website */
+.header{
+	width: 100%;
+	height: 50px;
+	background-color: #F5AEE3;
+}
+/* ul.menu: flex container; */
+.header>.menu{
+	height: 100%;
+	display: flex; /*row*/
+	list-style-type: none;
+	align-items: center;
+}
+.header>.menu a{
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.header>ul.menu>li{
+	margin: 0 20px;
+}
+/* css chua danh sach cac box tin tuc */
+.content{
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+}
+.content>h3{
+	text-align: center;
+	margin: 20px 0;
+}
+/* hop chua cac item con ben trong */
+.float_container{
+	width: 100%;
+	height: 100%;
+}
+/* cac item con */
+.float_item{
+	width: 30%;
+	min-height: 200px;
+	background-color: #FDFBF1;
+	text-align: center;
+	/* line-height: 200px; */
+	/* border: 1px solid #6D6969; */
+	font-size: 20px;
+	/* border-radius: 10px; */
+	/* nếu hộp chứa mà còn không gian khả dụng ( khoảng không chưa có item chiếm) 
+	thì nó tính toán để hiển thị các item khác lên vùng không gian đó */
+	float: left;
+	margin: 10px 16px;
+}
+.float_item>img{
+	width: 100%;
+}
+.float_item>h4{
+	margin: 10px 0;
+}
+.float_item>p{
+	font-size: 13px;
+	line-height: 1.5;
+	color: gray;
+	margin-bottom: 10px;
+}
+

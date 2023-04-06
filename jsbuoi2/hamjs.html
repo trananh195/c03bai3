@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Hàm trong Js</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- Hàm: đoạn khối code được sử dụng nhiều lần bằng cách chỉ định nghĩa 1 lần, thực hiện 1 chức năng cụ thể nào đó -->
+	<script>
+		// biến toàn cục/ global: biến khai báo nằm ngoài phạm vi các hàm và được sử dụng trong tất cả file code mà nó đn kể trong hàm
+		let num1 = 10;
+		let num2 = 20;
+		// định nghĩa hàm
+		function tinhToan(){
+			// biến local/ cục bộ: được khai báo trong phạm vi khối code {} và tồn tại chỉ trong phạm vi khối code đó
+			let sum = num1 + num2;
+		    document.write (num1 + "+ "+ num2 + " = "+ sum);
+		} 
+		// dùng hàm -> gọi hàm
+		 tinhToan();
+		console.log("num1: "+ num1);
+		// console.log("sum: "+ sum);
+		// hàm có tham số truyền vào 
+		// các tham số mặc định, khi dùng hàm không truyền vào thì sẽ lấy giá trị mặc định đó (định nghĩa tham số mặc định từ phải sang trái)
+		function tinhtoan2so(n1, n2, pheptinh = '+'){
+			switch(pheptinh){
+				case '+':
+					document.write(n1 + " + "+ n2 + '=' +(n1 + n2));
+					break;
+				case '-':
+					document.write(n1 + " - "+ n2 + '=' +(n1 - n2));
+					break;
+				case '*':
+					document.write(n1 + " * "+ n2 + '=' +(n1 * n2));
+					break;
+				case '/':
+					if(n2 != 0){
+						document.write(n1 + " / "+ n2 + '=' +(n1 / n2));
+					} else {
+						alert("Không thể thực hiện phép chia cho 0");
+					}
+					break;
+				default:
+					alert("Phep tinh khong hop le");
+			}
+		}
+		tinhtoan2so(10, 20);
+		tinhtoan2so(10, 20, "*");
+
+	</script>
+</body>
+</html>

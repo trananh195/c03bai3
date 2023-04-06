@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num1 =10;
+        let num2 =20;
+        function tinhtoan(){
+            let sum =num1 + num2;
+            document.write(num1+ "+" +num2+ "=" +sum);
+        }
+        // tinhtoan();
+        // console.log("num1:" +num1);
+        function tinhtoan2so(n1, n2, pheptinh = '+'){
+            switch(pheptinh){
+                case '+':
+                    document.write(n1+ "+" +n2+ "=" +(n1+n2));
+                    break;
+                case '-':
+                    document.write(n1+ "-" +n2+ "=" +(n1-n2));
+                    break;
+                case '*':
+                    document.write (n1+ "*"+ n2+ "=" +(n1*n2));
+                    break;
+                case '/':
+                if(n2!=0){
+                    document.write(n1+ "/" +n2+ "=" +(n1/n2));
+                }else{
+                    arlet("Khong the thuc hien phep chia cho 0");
+                }
+                default:
+                    arlet("Khong hop le");           
+            }
+        }
+        tinhtoan2so(1, 20 );
+        
+        tinhtoan2so(5, 10, "*");
+        tinhtoan2so(20, 10, "/");
+        tinhtoan2so(10, 1);
+       
+        
+    </script>
+</body>
+</html>

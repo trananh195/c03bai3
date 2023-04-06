@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Mảng trong js</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<!-- Mảng trong js là biến chứa nhiều giá trị (
+		nên dùng mảng lưu trữ nhiều giá trị cùng 1 loại thông tin để tránh nhầm lẫn) => [], Array -->
+	<script>
+		// khai báo biến mảng: let, var, const
+		const dstenhs = ["Nguyễn Thị A", "Nguyễn Thị B"];
+		// thêm 1 phần tử vào cuối mảng:
+		dstenhs.push("Lê Thị C");
+		// cập nhật: (vì phần tử thứ 0 trước Nguyễn Thị A)
+		dstenhs[0] = "Hoàng Thị A";
+		dstenhs.push("Phạm Văn D");
+		// lấy kích thước của mảng .length:
+		document.write("Kích thước: "+ dstenhs.length);
+
+		let dstenlh = new Array("T2201E", "T2202E", "T2203E");
+		// duyệt mảng -> chỉ mục của các phần tử mảng ( 0 -> length-1)
+		document.write("<ul>");
+		for(let i=0; i< dstenlh.length; i++){
+			document.write("<li>"+ dstenlh[i] + "</li>");
+		}
+		document.write("</ul>");
+
+		//duyệt bằng hàm foreach của đối tượng 
+		/*
+		Hàm này có 3 tham số: function (ts1, ts2, ts3)
+		ts1: giá trị phần tử tại mỗi lần duyệt
+		ts2: chỉ mục của phần tử tại mỗi lần duyệt
+		ts3: mảng đang được duyệt
+		*/
+		/*
+		dstenhs.forEach(function(){
+			console.log('hello');
+		});
+		*/
+		document.write("<ol>");
+		dstenhs.forEach(function(item){
+			document.write("<li>"+ item + "</li>");
+		});
+		document.write("</ol>");
+		/*
+		dstenhs.forEach(function(item, index){
+			
+		});
+		*/
+		document.write("<ul>");
+		dstenhs.forEach(function(item, index, array){
+			document.write("<li>"+ array[index] + "</li>");
+		});
+		document.write("</ul>");
+
+
+	</script>
+</body>
+</html>
